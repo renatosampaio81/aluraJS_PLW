@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ifs Encadeados</title>
+</head>
+<body>
+    <script>
+
+        var ehEstagiário = true;
+        var ehCLT = false;
+
+        if(ehEstagiário || ehCLT) {
+            var salarioMensal = 1000;
+
+            if(salarioMensal > 0 && salarioMensal < 1000){
+                var bonus = salarioMensal * 0.05;
+                console.log("salario > 0 e < 1000");
+                console.log(bonus);
+            
+            } else if(salarioMensal < 2000) {
+                var bonus = salarioMensal * 0.10;
+                console.log("não caiu na anterior e o salário é < 2000");
+                console.log(bonus);
+
+            } else {
+                var bonus = salarioMensal * 0.15;
+                console.log("não caiu em nenhuma das outras");
+                console.log(bonus);
+            }
+
+        }
+
+    </script>
+</body>
+</html>
