@@ -1,5 +1,12 @@
 function calculaTodosImcs(){ //coloquei dentro de uma função para que nao execute automaticamente ao carregar a apagina
 
+    
+}
+
+var botao = document.getElementById("calcula-imcs");
+//botao.onclick = calculaTodosImcs; // quando o botao for clicado, o js vai chamar a função de calcular os imc's. Onclick tem um problema, só pode receber uma ação...
+
+botao.addEventListener("click", function(){ // igual o onclick porém melhor, pode ser incluída mais de uma ação. No exemplo em questão o primeiro campo é o evento que voce quer do botao (click) e o segundo é a ação (rodar uma função)
     var trsPacientes = document.getElementsByClassName("paciente"); // Array de trs da classe paciente
 
     percorreArray(trsPacientes, function(pacienteTr){ // to chamando a função percorreArray, lá de percorre.js, passando como parametro o trsPacientes e criando uma função anonima
@@ -31,11 +38,4 @@ function calculaTodosImcs(){ //coloquei dentro de uma função para que nao exec
         console.log(imc);       
         
     });
-}
-
-var botao = document.getElementById("calcula-imcs");
-//botao.onclick = calculaTodosImcs; // quando o botao for clicado, o js vai chamar a função de calcular os imc's. Onclick tem um problema, só pode receber uma ação...
-botao.addEventListener("click", calculaTodosImcs); // igual o onclick porém melhor, pode ser incluída mais de uma ação. No exemplo em questão o primeiro campo é o evento que voce quer do botao (click) e o segundo é a ação (rodar uma função)
-botao.addEventListener("click",function(){
-    console.log ('estou atribuindo duas ações a um mesmo botão');
-})
+}); 
