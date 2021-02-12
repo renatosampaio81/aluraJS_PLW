@@ -1,6 +1,6 @@
 var trsPacientes = document.getElementsByClassName("paciente"); // Array de trs da classe paciente
 
-percorreArray(trsPacientes, function(pacienteTr){ // to chamando a função percorreArray, lá de percorre.js, passando como parametro o trsPacientes e criando uma função anonima
+percorreArray(trsPacientes, function (pacienteTr){ // como essa função depende o pacienteTr, eu vou precisar receber ela na chamada da função
     var tdNome = pacienteTr.getElementsByClassName("info-nome")[0]; // dentro de cada paciente, pega a informação contida na classe info-name
     var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0]; // se trata de um array de um único objeto, não tem dois pesos dentro de um paciente, mas por se tratar de getElementsByClassName é necessário especificar
     var tdAltura = pacienteTr.getElementsByClassName("info-altura")[0];
@@ -18,14 +18,8 @@ percorreArray(trsPacientes, function(pacienteTr){ // to chamando a função perc
                 } else{
                     console.log("Não executei porque a altura eh igual a zero");
                 }
-            //}    
-        }}//pegaImc é uma propriedade do objeto paciente, que recebe a funcão calculaIMC sem (), pq nao quero o resultado dela.. não quero executar
-    //var imc = pacienteAtual.pegaImc(pacienteAtual); //chama a função passando cada um dos pacientes como parametro.  
-    //ao inves de eu passar o pacienteAtual como parametro, eu não vou passar nada e utilizar o this
-    var imc = pacienteAtual.pegaImc(); // Como eu preciso do valor do imc aqui fora, eu faço essa chamada dentro de uma var, pra receber o return
-
-    var tdImc = pacienteTr.getElementsByClassName("info-imc")[0];
-    tdImc.textContent = imc;
-    console.log(imc);       
-    
+            //}
+            }};
+    console.log(pacienteAtual.nome)
 });
+
